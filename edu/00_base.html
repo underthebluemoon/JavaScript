@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>00_base</title>
+  <!-- 외부 스크립트 : head / body 위치 가능  -->
+  <script src="./00.js" defer></script>
+  <!-- defer : html 모두 읽은 뒤 링크된 JS 불러올 것 -->
+  <!-- 상황에 따라 defer가 필요할 수도, 필요 없을 수도 있음 -->
+</head>
+<body>
+  <!-- 기본적으로 읽는 순서는 위에서 아래 -->
+  <!-- 내부 스크립트 : head / body 위치 가능 -->
+  <script>
+    console.log('test');
+  </script>
+</body>
+</html>
