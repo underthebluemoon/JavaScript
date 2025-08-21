@@ -68,7 +68,7 @@ console.log(obj1, obj2); // obj1의 값이 같이 변경됨
 
 // 콜백(call back) 함수
 // 다른 함수의 파라미터로 전달되어서 특정 조건에 따라 호출되는 함수 : argument가 함수
-functon myChk(callback) {
+function myChk(callback) {
   callback();
 }
 const test11 = () => console.log('콜백함수')
