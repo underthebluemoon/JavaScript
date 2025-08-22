@@ -29,7 +29,7 @@ obj2.userInfo.name = '갑순이';
 // → object 안의 데이터 일부를 변경하는 것은 가능
 console.log(obj2.userInfo.name);
 
-// Optinal Chaining (ECMA 2022 추가)
+// Optional Chaining (ECMA 2022 추가)
 
 // obj2.userInfo.rank; 
 // 없는 값이지만, Error 미발생 : undefined
@@ -97,11 +97,11 @@ if(arr4.indexOf('홍길동') > -1) {
   // indexOf의 경우 if() 사용해서 true/false 값 얻을 수 있음
 }
 
-// push(...argusemant) : '원본' 배열에 마지막 요소를 추가하고, 바뀐length 반환
+// push(...argument) : '원본' 배열에 마지막 요소를 추가하고, 바뀐length 반환
 const resultLength = arr4.push(100); // [1, 2, '홍길동', 4, 5, 100]
 console.log(resultLength, arr4);
 
-// concat(...argd) : 배열의 마지막 요소를 추가한 '새로운' 배열을 반환
+// concat(...args) : 배열의 마지막 요소를 추가한 '새로운' 배열을 반환
 const arr5 = [1, 2, 3];
 const resultConcat = arr5.concat(4, 5);
 console.log(arr5, resultConcat);
@@ -156,7 +156,7 @@ const resultSort = arr13.sort((a, b) => a - b);  // callback함수를 이용해�
                     // (b - a) : 숫자 내림차순 정렬 
 console.log(arr13, resultSort);  // 숫자 오름차순으로 : [5, 9, 23, 26, 24576, 56426]
 
-// map(callback) : 배열의 모든 요소에 대해 콜백함수를 반복하여 실행한 후, 새로운 배열을 반환
+// map(callback) : 배열의 모든 요소에 대해 콜백함수를 반복하여 실행한 후, 새로운 배열을 반환 (return 필수)
 const arr14 = [1, 2 ,3, 4, 5];                                 // → 원본 수정 없음
 
 // arr14[0] *= 2;
