@@ -58,7 +58,31 @@ selectorAllH1[1].removeAttribute('style');
 title.style.color = 'red';
 
 // classList : HTML 요소에 클래스로 스타일 추가 (클래스에 스타일을 준 뒤 적용/해제)
- const p = document.querySelector('p');
+const p = document.querySelector('p');
 p.classList.add('test2');  // 클래스 'test2' 추가
 p.classList.remove('test');  // 기존 클래스 삭제
 p.classList.toggle('test3');  // 해당 없으면 추가
+
+
+// ---------------
+// 새로운 요소 생성
+// ---------------
+
+// 요소 생성
+const newH1 = document.createElement('h1');
+newH1.textContent = '새로운 요소다.';
+
+// 요소 삽입(부모노드의 가장 마지막 자식노드로 추가)
+document.body.appendChild(newH1);
+
+// 요소 삽입 (부모노드의 자식노드 중 특정 타겟 앞에 노드 추가)
+// 바로 위의 메서드를 연달아 주면, 맨 끝의 것에 덮어씌어지짐
+const newH11 = document.createElement('h1');
+newH1.textContent = '새로운 요소다.';
+const childP = document.querySelector('p');
+document.body.insertBefore(newH1, childP)
+
+//  요소 제거
+const form = document.querySelector('form');
+document.body.removeChild(form);
+
