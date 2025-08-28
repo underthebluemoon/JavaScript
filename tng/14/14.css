@@ -1,0 +1,25 @@
+fieldset {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+fieldset > form {
+  text-align: center;
+}
+
+input {
+  width: 80px;
+}
+
+.result {
+  border: 0.5px solid #000;
+  border-radius: 5px;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+.check {
+  color: gray;
+  text-decoration: line-through;
+}
