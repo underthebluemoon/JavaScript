@@ -1,2 +1,2 @@
-const forTextContent = document.querySelector('.here');
-// forTextContent.textContent = '여기!'
+const attribute = document.querySelector('span');
+attribute.setAttribute(color)
