@@ -1,4 +1,4 @@
-// Calaback Hell → 웬만하면 x
+// Callback Hell → 웬만하면 x
 setTimeout(() => {
   console.log('A');
 

@@ -28,7 +28,7 @@ axios.get(url)
   console.log(Response);
             // 서버에서 응답이 온 response중, 내가 필요한 부분(data) : response.data
   Response.data.forEach((item, idx) => {
-                // img 태그의 scr속성에 각 요소의 download_url 삽입
+                // img 태그의 src속성에 각 요소의 download_url 삽입
     const newImg = document.createElement('img');
     newImg.setAttribute('src', item.download_url);
     newImg.setAttribute('width', '300px');

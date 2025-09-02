@@ -1,26 +1,25 @@
-function orderInCafe() {
-  order('Americano', function(orderNum) {
-    if(orderNum === false) console.log('주문 실패');
-    else {
-      payment(orderNum, function(paymentNum) {
-        if(paymentNum === false) console.log('결제 실패');
-        else {
-          makecoffee(orderNum, function(makingcoffee) {
-            if(makingcoffee === false) console.log('제조 실패');
-            else{
-              console.log('완료!');
-            }
-          });
-        }
-      });
-    }
+function pro1(str, ms) {
+  return new Promise((resolve, reject) => {
+            //하나만
+    setTimeout(() => {
+      if(str === 'A' || str === 'B' || str === 'C') {
+        console.log(str);
+        return resolve();  //return 생략가능
+      } else {
+        reject();
+
+      } 
+    }, ms);
   });
 }
 
-function orderInCafePromise() {
-  order('Americano')
-    .then(orderNum => payment(orderNum))
-    .then(orderNum => makecoffee(orderNum))
-    .then(orderNum => console.log('완료!'))
-    .catch(error => console.log('실패'));
+// async/await 문법
+// promise 지옥을 개선하기 위해 나온 문법
+//  내부적으로 Promise 객체를 사용하여 비동기 처리를 실행
+async function test() {
+  await pro1('A', 1500);
+  await pro1('B', 1000);
+  await pro1('C', 500);
+  return '작업완료';
 }
+console.log(test());
