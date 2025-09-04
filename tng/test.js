@@ -1,25 +1,31 @@
-function pro1(str, ms) {
-  return new Promise((resolve, reject) => {
-            //하나만
-    setTimeout(() => {
-      if(str === 'A' || str === 'B' || str === 'C') {
-        console.log(str);
-        return resolve();  //return 생략가능
-      } else {
-        reject();
+let divVal = 0;
 
-      } 
-    }, ms);
-  });
-}
+try {
+  // 내가 처리하고 싶은 로직을 작성하는 영역
+  // 예외가 발생할 수 있는 영역
+  
+  console.log('트라이 시작');
 
-// async/await 문법
-// promise 지옥을 개선하기 위해 나온 문법
-//  내부적으로 Promise 객체를 사용하여 비동기 처리를 실행
-async function test() {
-  await pro1('A', 1500);
-  await pro1('B', 1000);
-  await pro1('C', 500);
-  return '작업완료';
+  if(divVal < 1) {
+    // 강제 예외 발생
+    throw new Error('유저 입력값이 0임');
+  }
+  10 / divVal;
+  console.log('트라이 끝');
+} catch(err) {
+  // try 문에서 에러가 발생했을 때, 처리한 로직을 작성하는 영역 
+  // 에러 발생 시, try 동작 멈추고 catch처리
+  console.log('예외 발생');
+  console.log(err.message);
+  if(err instanceof TypeError) {
+    // boolean 이용해서 에러 타입 구분
+    console.log('타입 에러 발생');
+  } else if(err instanceof ReferenceError) {
+    console.log('참조 에러 발생');
+  } else if(err instanceof Error) {
+    console.log('일반 에러 발생');
+  }
+} finally {
+  // 정상, 에러 여부 상관없이 무조건 실행되는 로직을 작성하는 영역
+  console.log('파이널리 실행');
 }
-console.log(test());
